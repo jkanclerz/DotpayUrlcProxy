@@ -8,7 +8,8 @@
         "symfony/validator": "~2.6",
         "symfony/config": "~2.6",
         "symfony/translation": "~2.6",
-        "kriswallsmith/buzz": "dev-master"
+        "kriswallsmith/buzz": "dev-master",
+        "monolog/monolog": "~1.12"
     },
     "autoload": {
         "psr-0": {

@@ -6,6 +6,7 @@ use Redirect\Model\RedirectManager;
 use Buzz\Browser;
 use Redirect\Handler\ProxyHandler;
 use Redirect\Controller\ProxyController;
+use Silex\Provider\MonologServiceProvider;
 
 $app['jkan.controller.demo'] = $app->share(function () use ($app) {
     return new DemoController(
@@ -37,10 +38,15 @@ $app['jkan.manager.redirect'] = $app->share(function () use ($app) {
 $app['jkan.proxy.handler'] = $app->share(function () use ($app) {
     return new ProxyHandler(
         $app['browser'],
-        $app['jkan.manager.redirect']->getRepository()
+        $app['jkan.manager.redirect']->getRepository(),
+        $app['monolog']
     );
 });
 
 $app['browser'] = $app->share(function () use ($app) {
     return new Browser();
 });
+
+$app->register(new MonologServiceProvider(), array(
+    'monolog.logfile' => __DIR__.'/logs/proxy.log',
+));
