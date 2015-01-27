@@ -1,0 +1,7 @@
+{% extends 'Layout/base.html.twig' %}
+
+{% block content %}
+    {% for redirect in redirects %}
+        {{ redirect.email_wildcard }}, {{ redirect.redirect_url }}
+    {% endfor %}
+{% endblock %}

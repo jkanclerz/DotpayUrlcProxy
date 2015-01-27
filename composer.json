@@ -2,11 +2,17 @@
     "require": {
         "silex/silex": "~1.2",
         "twig/twig": ">=1.8, <2.0-dev",
-        "symfony/twig-bridge": "~2.3"
+        "symfony/twig-bridge": "~2.3",
+        "doctrine/dbal": "~2.2",
+        "symfony/form": "v2.6.3",
+        "symfony/validator": "~2.6",
+        "symfony/config": "~2.6",
+        "symfony/translation": "~2.6",
+        "kriswallsmith/buzz": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "Demo": "src/"
+            "": "src/"
         }
     }
 }
