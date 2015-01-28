@@ -1,7 +1,25 @@
 {% extends 'Layout/base.html.twig' %}
 
 {% block content %}
-    {% for redirect in redirects %}
-        {{ redirect.email_wildcard }}, {{ redirect.redirect_url }}
-    {% endfor %}
+    <div>
+        <table class="table">
+            <caption>Redirect array</caption>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Email WildCard</th>
+                    <th>Redirect Url</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for redirect in redirects %}
+                    <tr>
+                        <td>{{ redirect.id }}</td>
+                        <td>{{ redirect.email_wildcard }}</td>
+                        <td>{{ redirect.redirect_url }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

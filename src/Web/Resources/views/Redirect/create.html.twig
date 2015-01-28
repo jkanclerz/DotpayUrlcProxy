@@ -1,8 +1,18 @@
 {% extends 'Layout/base.html.twig' %}
 
 {% block content %}
-    <form action="{{ path('redirect_create_post') }}" method="POST">
-        {{ form_row(form) }}
-        <button title="zapisz" type="submit">Wyślij</button>
-    </form>
+    <div class="row">
+        <div class="col-xs-12">
+            <form action="{{ path('redirect_create_post') }}" method="POST">
+                <div class="col-xs-12">
+                    {{ form_row(form.emailWildcard) }}
+                </div>
+                <div class="col-xs-12">
+                    {{ form_row(form.redirectUrl) }}
+                    {{ form_rest(form) }}
+                </div>
+                    <button class="btn btn-default" title="zapisz" type="submit">Wyślij</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
